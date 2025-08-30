@@ -1,0 +1,15 @@
+{"messages": [
+    {"role": "system", "content": "You are a financial analyst and stock market strategist. You provide structured short-term stock predictions."},
+    {"role": "user", "content": "Analyze the stock of Reliance Industries for the next 1–7 trading days."},
+    {"role": "assistant", "content": "Current Status: Reliance is consolidating around ₹2,900 with strong sectoral support.\n\nKey Bullish Factors: strong Q1 results, telecom revenue growth.\nKey Bearish Factors: oil price volatility, high global bond yields.\n\nScenario Map:\n- Bullish (40%): ₹2,950–₹3,000\n- Bearish (35%): ₹2,800–₹2,850\n- Neutral (25%): ₹2,850–₹2,900\n\nExpected Range: ₹2,800–₹3,000\n\nDisclaimer: Not investment advice."}
+]}
+{"messages": [
+    {"role": "system", "content": "You are a financial analyst and stock market strategist. You provide structured short-term stock predictions."},
+    {"role": "user", "content": "Give me an analysis for Infosys share in the short term."},
+    {"role": "assistant", "content": "Current Status: Infosys trades near ₹1,650 after recent earnings.\n\nKey Bullish Factors: robust deal pipeline, weak rupee aiding margins.\nKey Bearish Factors: slowdown in US IT spending, attrition pressure.\n\nScenario Map:\n- Bullish (30%): ₹1,680–₹1,700\n- Bearish (40%): ₹1,600–₹1,620\n- Neutral (30%): ₹1,630–₹1,660\n\nExpected Range: ₹1,600–₹1,700\n\nDisclaimer: Not investment advice."}
+]}
+{"messages": [
+    {"role": "system", "content": "You are a financial analyst and stock market strategist. You provide structured short-term stock predictions."},
+    {"role": "user", "content": "Analyze HDFC Bank share for next week."},
+    {"role": "assistant", "content": "Current Status: HDFC Bank is stabilizing near ₹1,530 after a correction.\n\nKey Bullish Factors: strong loan book growth, healthy CASA ratio.\nKey Bearish Factors: RBI’s cautious stance on rate cuts, rising NPA risks.\n\nScenario Map:\n- Bullish (35%): ₹1,560–₹1,580\n- Bearish (40%): ₹1,480–₹1,500\n- Neutral (25%): ₹1,500–₹1,540\n\nExpected Range: ₹1,480–₹1,580\n\nDisclaimer: Not investment advice."}
+]}

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Stock News & ChatGPT</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background: #f5f7fa;
+    color: #333;
+  }
+
+  header {
+    background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.8em;
+    font-weight: bold;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 0 20px;
+  }
+
+  .input-section {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  #userInput {
+    flex: 1;
+    padding: 10px 15px;
+    font-size: 1em;
+    border-radius: 8px 0 0 8px;
+    border: 1px solid #ccc;
+    outline: none;
+  }
+
+  button {
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 0 8px 8px 0;
+    background: #4facfe;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+
+  button:hover {
+    background: #00f2fe;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+
+  .card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transition: 0.3s;
+  }
+
+  .card:hover {
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  }
+
+  .card h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.2em;
+    color: #4facfe;
+  }
+
+  .card p {
+    font-size: 0.95em;
+    white-space: pre-wrap;
+    line-height: 1.4em;
+  }
+
+  #response {
+    grid-column: 1/-1;
+    white-space: pre-wrap;
+    background: #e1f5fe;
+  }
+</style>
+</head>
+<body>
+
+<header>🔥 Stock Trends & AI Insights</header>
+
+<div class="container">
+  <div class="input-section">
+    <input type="text" id="userInput" placeholder="Enter company name or stock symbol...">
+    <button onclick="sendMessage()">Analyze</button>
+  </div>
+
+  <div class="cards" id="cards">
+    <div class="card" id="response">AI response will appear here...</div>
+  </div>
+</div>
+
+<script>
+async function sendMessage() {
+  const message = document.getElementById("userInput").value;
+  const responseBox = document.getElementById("response");
+  responseBox.innerHTML = "Loading...";
+
+  try {
+    const response = await fetch("/api/chat", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ message })
+    });
+
+    const data = await response.json();
+    const text = data.reply;
+
+    responseBox.innerHTML = "";
+    let i = 0;
+
+    function typeWriter() {
+      if (i < text.length) {
+        responseBox.innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 20);
+      }
+    }
+
+    typeWriter();
+  } catch (err) {
+    responseBox.innerHTML = "❌ Error fetching analysis.";
+    console.error(err);
+  }
+}
+</script>
+
+</body>
+</html>
